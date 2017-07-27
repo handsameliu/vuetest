@@ -30,7 +30,7 @@ exports.signOut = (req,res) => {
     res.json(message(null,{message:'success'}));
 };
 
-/**
+/** 例：
  * const user = function * (params){
  * let result =  yield request.get(config.API+ '/api/user/'+params.username+'/'+params.password);
     result = result.data;
