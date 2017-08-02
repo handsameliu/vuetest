@@ -14,5 +14,9 @@ module.exports = {
     source: 'src',
     img: 'src',
     image: 'xlink:href'
-  }
+  },
+  // vux-loader
+  plugins: [{
+    name: 'vux-ui'
+  }]
 }

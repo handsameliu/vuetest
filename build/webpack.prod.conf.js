@@ -121,9 +121,7 @@ if (config.build.bundleAnalyzerReport) {
   webpackConfig.plugins.push(new BundleAnalyzerPlugin())
 }
 
-module.exports = webpackConfig
-
-var pages = utils.getEntries('./src/views/**/*.html');
+var pages = utils.getEntries('./src/views/*/*.html');
 for (var page in pages) {
   // 配置生成的html文件，定义路径等
   var conf = {
@@ -142,5 +140,7 @@ for (var page in pages) {
       })
   }
   // 需要生成几个html文件，就配置几个HtmlWebpackPlugin对象
-  module.exports.plugins.push(new HtmlWebpackPlugin(conf))
+  webpackConfig.plugins.push(new HtmlWebpackPlugin(conf))
 }
+
+module.exports = webpackConfig

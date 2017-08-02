@@ -4,7 +4,7 @@ const page = require('./page_router');
 const api = require('./api_router');
 
 module.exports = function (app) {
-    app.use('/', page);
+    // app.use('/', page);//影响热更新
     // app.all('/api', function (req, res, next) {
     //     res.header("Access-Control-Allow-Origin", "*");
     //     res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
