@@ -3,8 +3,6 @@
 const express = require('express');
 const router = express.Router();
 
-let hostAddress = '';
-
 const contro = require("../../controller");
 const user = contro.user;
 

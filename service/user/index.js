@@ -11,7 +11,7 @@ const moment = require('moment');  // 处理时间   http://momentjs.cn/
  */
 exports.signIn = (req,res) => {
     let body = req.body;
-    res.json(message(null,{error_code:0,message:'success',result:{username:'',_id:''}}));
+    res.json(message(null,{error_code:0,message:'success',result:body}));
 };
 
 /**

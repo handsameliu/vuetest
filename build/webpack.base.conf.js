@@ -2,13 +2,15 @@ var path = require('path')
 var utils = require('./utils')
 var config = require('../config')
 var vueLoaderConfig = require('./vue-loader.conf')
+const vuxLoader = require('vux-loader');
+const polyfill = require('babel-polyfill');
 
 function resolve (dir) {
   return path.join(__dirname, '..', dir)
 }
 
-module.exports = {
-  entry: utils.getEntries('./src/views/**/*.js'),
+const webpackConfig = {
+  entry: utils.getEntries('./src/views/*/*.js'),
   output: {
     path: config.build.assetsRoot,
     filename: '[name].js',
@@ -62,3 +64,7 @@ module.exports = {
     ]
   }
 }
+
+module.exports = vuxLoader.merge(webpackConfig, {
+  plugins: [{name:'vux-ui'},{name: 'duplicate-style'}]
+})

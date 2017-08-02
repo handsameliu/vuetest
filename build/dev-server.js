@@ -29,18 +29,22 @@ var proxyTable = config.dev.proxyTable
 
 var app = express()
 
-app.set('views', path.join(__dirname, '../dist')); 
-app.set('view engine', 'html'); 
-app.engine('html', require('ejs').__express); 
+// app.set('views', path.join(__dirname, '../dist'));  //影响热更新
+// app.set('view engine', 'html'); //影响热更新
+// app.engine('html', require('ejs').__express); //影响热更新
 
-app.use(express.static(path.join(__dirname, '../dist')));
+// app.use(express.static(path.join(__dirname, '../dist')));//影响热更新
 app.use(logger('[:date[clf]] [:status] :method :url ~:response-time(ms) -:res[content-length]- @:remote-addr #:user-agent'));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: false}));
 
 var routers = require('../routers');
-app.use(cors());
-routers(app);
+// app.use(cors());   
+// app.use('/api',function(req,res,next){
+//     routers(app);
+//     next();
+// });
+routers(app);  // 本地测试用，由于改成tomcat服务器，所以只需把build后的文件复制过去就行，所以就不需要node express服务器了，其实不同设置就行，直接dev启动即可
 
 var compiler = webpack(webpackConfig)
 

@@ -41,15 +41,4 @@ module.exports = {
 
 console.error(process.env.NODE_ENV);
 
-if(process.env.NODE_ENV == 'build'){
-    module.exports.API = 'http://192.168.3.6:8080';
-}else if(process.env.NODE_ENV == 'development'){
-    module.exports.API = 'http://192.168.3.6:8080';
-}else if(process.env.NODE_ENV == 'testing'){
-    module.exports.API = 'http://192.168.3.6:8080';
-}else if(process.env.NODE_ENV == 'production'){
-    module.exports.API = 'http://192.168.3.6:8080';
-}else{
-    module.exports.API = 'http://192.168.3.6:8080';
-}
 
