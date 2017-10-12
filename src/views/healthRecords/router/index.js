@@ -8,11 +8,13 @@ export default new Router({
     {
       path: '/',
       name: 'record',
-      component:require('../components/recordIndex')
+      component:resolve => require(['../components/recordIndex'],resolve)  // 改为异步加载
     },{
       path: '/recordTimeLine',
       name: 'timeLine',
-      component:require('../components/recordTimeLine')
+      component:resolve => require(['../components/recordTimeLine'],resolve)
     }
   ]
 })
+
+// 参考 vue2懒加载  http://www.cnblogs.com/zhanyishu/p/6587571.html

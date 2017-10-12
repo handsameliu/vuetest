@@ -1,6 +1,6 @@
 <template>
   <div id="app">
-    <img src="./assets/logo1.png">
+    <!-- <img src="./assets/logo1.png"> -->
     <router-link to='/'>hello</router-link>
     <router-link to='/world'>world</router-link>
     <group>
@@ -11,8 +11,6 @@
 </template>
 
 <script>
-    const FastClick = require('fastclick')
-    FastClick.attach(document.body);
     import { Group, XInput, XButton } from 'vux';
     export default {
       name: 'app',

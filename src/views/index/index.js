@@ -8,6 +8,9 @@ import axios from 'axios'; // 引入http
 Vue.prototype.$http = axios;
 Vue.config.productionTip = false;
 
+const FastClick = require('fastclick');
+FastClick.attach(document.body);
+
 new Vue({
   el: '#app',
   router,
